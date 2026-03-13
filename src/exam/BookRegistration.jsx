@@ -1,33 +1,38 @@
-import React, { useState } from "react"
-import "./BookRegistration.css"
+import React, { useState } from "react";
+import "./BookRegistration.css";
 
 function BookRegistration() {
 
-  const [title,setTitle] = useState("")
-  const [author,setAuthor] = useState("")
-  const [price,setPrice] = useState("")
-  const [publisher,setPublisher] = useState("")
-  const [year,setYear] = useState("")
+  const [title,setTitle] = useState("");
+  const [author,setAuthor] = useState("");
+  const [price,setPrice] = useState("");
+  const [publisher,setPublisher] = useState("");
+  const [year,setYear] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    let books = JSON.parse(localStorage.getItem("books")) || []
+    // get existing books
+    let books = JSON.parse(localStorage.getItem("books")) || [];
 
-    const newBook = { title, author, price, publisher, year }
+    // create new book
+    const newBook = { title, author, price, publisher, year };
 
-    books.push(newBook)
+    // add book
+    books.push(newBook);
 
-    localStorage.setItem("books", JSON.stringify(books))
+    // store in local storage
+    localStorage.setItem("books", JSON.stringify(books));
 
-    alert("Book Added Successfully")
+    alert("Book Added Successfully");
 
-    setTitle("")
-    setAuthor("")
-    setPrice("")
-    setPublisher("")
-    setYear("")
-  }
+    // clear form
+    setTitle("");
+    setAuthor("");
+    setPrice("");
+    setPublisher("");
+    setYear("");
+  };
 
   return (
 
@@ -82,8 +87,7 @@ function BookRegistration() {
       </form>
 
     </div>
-
-  )
+  );
 }
 
-export default BookRegistration
+export default BookRegistration;

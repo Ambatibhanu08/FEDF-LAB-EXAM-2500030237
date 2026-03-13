@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import "./BookList.css"
+import React, { useEffect, useState } from "react";
+import "./BookList.css";
 
 function BookList() {
 
-  const [books,setBooks] = useState([])
+  const [books,setBooks] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
 
-    const storedBooks = JSON.parse(localStorage.getItem("books")) || []
+    const storedBooks = JSON.parse(localStorage.getItem("books")) || [];
+    setBooks(storedBooks);
 
-    setBooks(storedBooks)
-
-  },[])
+  }, []);
 
   return (
-    
 
-     <div className="book-list">
-  <h2>Registered Books</h2>
+    <div className="book-list">
+
+      <h2>Registered Books</h2>
 
       {books.length === 0 ? (
 
@@ -28,7 +27,6 @@ function BookList() {
         <table border="1">
 
           <thead>
-
             <tr>
               <th>Title</th>
               <th>Author</th>
@@ -36,7 +34,6 @@ function BookList() {
               <th>Publisher</th>
               <th>Year</th>
             </tr>
-
           </thead>
 
           <tbody>
@@ -58,7 +55,8 @@ function BookList() {
       )}
 
     </div>
-  )
+
+  );
 }
 
-export default BookList
+export default BookList;
