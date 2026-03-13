@@ -1,10 +1,9 @@
-/* Book Registration Box */
 
 .register-box{
   width: 350px;
   margin: 40px auto;
   padding: 25px;
-  background: #fdf6ec;      /* soft vintage cream */
+  background: #fdf6ec;      
   border-radius: 8px;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
   text-align: center;
