@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
+import "./BookRegistration.css"
 
 function BookRegistration() {
 
@@ -9,18 +10,17 @@ function BookRegistration() {
   const [year,setYear] = useState("")
 
   const handleSubmit = (e) => {
-
     e.preventDefault()
 
     let books = JSON.parse(localStorage.getItem("books")) || []
 
-    const newBook = {title,author,price,publisher,year}
+    const newBook = { title, author, price, publisher, year }
 
     books.push(newBook)
 
-    localStorage.setItem("books",JSON.stringify(books))
+    localStorage.setItem("books", JSON.stringify(books))
 
-    alert("Book Registered")
+    alert("Book Added Successfully")
 
     setTitle("")
     setAuthor("")
@@ -30,62 +30,59 @@ function BookRegistration() {
   }
 
   return (
-    <div>
+
+    <div className="register-box">
 
       <h2>Book Registration</h2>
 
       <form onSubmit={handleSubmit}>
 
         <input
-        type="text"
-        placeholder="Book Title"
-        value={title}
-        onChange={(e)=>setTitle(e.target.value)}
+          type="text"
+          placeholder="Title"
+          value={title}
+          onChange={(e)=>setTitle(e.target.value)}
+          required
         />
-
-        <br/><br/>
 
         <input
-        type="text"
-        placeholder="Author"
-        value={author}
-        onChange={(e)=>setAuthor(e.target.value)}
+          type="text"
+          placeholder="Author"
+          value={author}
+          onChange={(e)=>setAuthor(e.target.value)}
+          required
         />
-
-        <br/><br/>
 
         <input
-        type="number"
-        placeholder="Price"
-        value={price}
-        onChange={(e)=>setPrice(e.target.value)}
+          type="number"
+          placeholder="Price"
+          value={price}
+          onChange={(e)=>setPrice(e.target.value)}
+          required
         />
-
-        <br/><br/>
 
         <input
-        type="text"
-        placeholder="Publisher"
-        value={publisher}
-        onChange={(e)=>setPublisher(e.target.value)}
+          type="text"
+          placeholder="Publisher"
+          value={publisher}
+          onChange={(e)=>setPublisher(e.target.value)}
+          required
         />
-
-        <br/><br/>
 
         <input
-        type="number"
-        placeholder="Year"
-        value={year}
-        onChange={(e)=>setYear(e.target.value)}
+          type="number"
+          placeholder="Year"
+          value={year}
+          onChange={(e)=>setYear(e.target.value)}
+          required
         />
 
-        <br/><br/>
-
-        <button>Add Book</button>
+        <button>ADD BOOK</button>
 
       </form>
 
     </div>
+
   )
 }
 

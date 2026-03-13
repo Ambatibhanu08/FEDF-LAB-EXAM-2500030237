@@ -1,0 +1,48 @@
+/* Book Registration Box */
+
+.register-box{
+  width: 350px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fdf6ec;      /* soft vintage cream */
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.register-box h2{
+  color: #5a3e2b;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.register-box input{
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #c8a97e;
+}
+
+.register-box form{
+  display: flex;
+  flex-direction: column;
+}
+
+.register-box input{
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+}
+
+.register-box button{
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.register-box button:hover{
+  background: #555;
+}
+body{
+   background-color: #f4e9d8;
+}

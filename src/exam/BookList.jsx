@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import "./BookList.css"
 
 function BookList() {
 
@@ -13,9 +14,10 @@ function BookList() {
   },[])
 
   return (
-    <div>
+    
 
-      <h2>Registered Books</h2>
+     <div className="book-list">
+  <h2>Registered Books</h2>
 
       {books.length === 0 ? (
 
