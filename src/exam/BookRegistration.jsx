@@ -81,7 +81,7 @@ function BookRegistration() {
 
         <br/><br/>
 
-        <button>Register</button>
+        <button>Add Book</button>
 
       </form>
 
