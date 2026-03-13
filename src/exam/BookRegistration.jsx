@@ -1,39 +1,36 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
+import "./BookRegistration.css"
 
 function BookRegistration() {
 
-  const [title,setTitle] = useState("");
-  const [author,setAuthor] = useState("");
-  const [price,setPrice] = useState("");
-  const [publisher,setPublisher] = useState("");
-  const [year,setYear] = useState("");
+  const [title,setTitle] = useState("")
+  const [author,setAuthor] = useState("")
+  const [price,setPrice] = useState("")
+  const [publisher,setPublisher] = useState("")
+  const [year,setYear] = useState("")
 
   const handleSubmit = (e) => {
+    e.preventDefault()
 
-    e.preventDefault();
+    let books = JSON.parse(localStorage.getItem("books")) || []
 
-  
-    let books = JSON.parse(localStorage.getItem("books")) || [];
+    const newBook = { title, author, price, publisher, year }
 
-    
-    const newBook = { title, author, price, publisher, year };
+    books.push(newBook)
 
+    localStorage.setItem("books", JSON.stringify(books))
 
-    books.push(newBook);
+    alert("Book Added Successfully")
 
-   
-    localStorage.setItem("books", JSON.stringify(books));
-
-    alert("Book Registered Successfully");
-
-    setTitle("");
-    setAuthor("");
-    setPrice("");
-    setPublisher("");
-    setYear("");
-  };
+    setTitle("")
+    setAuthor("")
+    setPrice("")
+    setPublisher("")
+    setYear("")
+  }
 
   return (
+
     <div className="register-box">
 
       <h2>Book Registration</h2>
@@ -80,12 +77,13 @@ function BookRegistration() {
           required
         />
 
-        <button>Register</button>
+        <button>ADD BOOK</button>
 
       </form>
 
     </div>
-  );
+
+  )
 }
 
-export default BookRegistration;
+export default BookRegistration
